@@ -18,6 +18,10 @@ buildscript {
     }
 }
 
+plugins {
+    id 'com.moowork.node' version '1.2.0'
+}
+
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'kotlin-noarg'
@@ -79,3 +83,19 @@ dependencies {
 noArg {
     annotation("com.rabitarochan.bokuboard.infrastructure.annotation.NoArgsConstructor")
 }
+
+// for Angular
+
+node {
+    download = true
+    workDir = file('./.nodejs')
+    npmWorkDir = file('./src/main/web')
+    nodeModulesDir = file('./src/main/web')
+}
+
+task buildAngular(type: NpmTask) {
+    args = ['run', 'dist']
+}
+
+// npmInstall -> buildAngular
+buildAngular.dependsOn(npmInstall)
