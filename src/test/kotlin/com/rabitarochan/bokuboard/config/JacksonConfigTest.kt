@@ -83,6 +83,7 @@ class JacksonConfigTest {
     private fun testDataset(): Dataset {
         return Dataset(
             "ID",
+            "NAME",
             "DESCRIPTION",
             DataDelimiter.Tab,
             DataCharset.UTF8,
@@ -95,6 +96,6 @@ class JacksonConfigTest {
     }
 
     private fun testDatasetJson(): String =
-        """{"id":"ID","description":"DESCRIPTION","delimiter":"Tab","charset":"UTF8","datasetType":"CSV","fileSize":12345,"recordCount":67890,"digest":"DIGEST","createdAt":"2017-01-01T12:34:56.789","updatedAt":"2017-12-31T23:59:59.999"}"""
+        """{"id":"ID","name":"NAME","description":"DESCRIPTION","delimiter":"Tab","charset":"UTF8","datasetType":"CSV","fileSize":12345,"recordCount":67890,"digest":"DIGEST","createdAt":"2017-01-01T12:34:56.789","updatedAt":"2017-12-31T23:59:59.999"}"""
 
 }

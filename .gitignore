@@ -1,6 +1,8 @@
 ### Application ###
 /data/
 /out/
+/.nodejs/
+/src/main/resources/static/assets/
 
 ### Gradle ###
 .gradle
